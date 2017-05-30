@@ -34,7 +34,7 @@ oid2cpid = json.load(open(os.path.join(hdf5_data_dir, 'overallid_to_catid_partid
 object2setofoid = {}
 for idx in range(len(oid2cpid)):
     objid, pid = oid2cpid[idx]
-    if not objid in object2setofoid.keys():
+    if not objid in list(object2setofoid.keys()):
         object2setofoid[objid] = []
     object2setofoid[objid].append(idx)
 
@@ -55,7 +55,7 @@ NUM_PART_CATS = 50
 cpid2oid = json.load(open(os.path.join(hdf5_data_dir, 'catid_partid_to_overallid.json'), 'r'))
 
 def printout(flog, data):
-	print data
+	print(data)
 	flog.write(data + '\n')
 
 def output_color_point_cloud(data, seg, out_file):

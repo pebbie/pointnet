@@ -45,9 +45,9 @@ all_cats = json.load(open(os.path.join(hdf5_data_dir, 'overallid_to_catid_partid
 NUM_CATEGORIES = 16
 NUM_PART_CATS = len(all_cats)
 
-print '#### Batch Size: ', batch_size
-print '#### Point Number: ', point_num
-print '#### Training using GPU: %d' % FLAGS.gpu
+print('#### Batch Size: ', batch_size)
+print('#### Point Number: ', point_num)
+print('#### Training using GPU: %d' % FLAGS.gpu)
 
 DECAY_STEP = 16881 * 20
 DECAY_RATE = 0.5
@@ -62,7 +62,7 @@ BN_DECAY_CLIP = 0.99
 BASE_LEARNING_RATE = 0.001
 MOMENTUM = 0.9
 TRAINING_EPOCHES = FLAGS.epoch
-print '### Training epoch: ', TRAINING_EPOCHES
+print('### Training epoch: ', TRAINING_EPOCHES)
 
 TRAINING_FILE_LIST = os.path.join(hdf5_data_dir, 'train_hdf5_file_list.txt')
 TESTING_FILE_LIST = os.path.join(hdf5_data_dir, 'val_hdf5_file_list.txt')
@@ -80,7 +80,7 @@ if not os.path.exists(SUMMARIES_FOLDER):
     os.mkdir(SUMMARIES_FOLDER)
 
 def printout(flog, data):
-	print data
+	print(data)
 	flog.write(data + '\n')
 
 def placeholder_inputs():
